@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Showcase</title>
+
+<style>
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 500px;
+  padding: 20px;
+  background: white;
+  border: 3px solid grey;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.product-img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.title {
+  font-size: 22px;
+  margin: 15px 0 5px;
+  font-weight: bold;
+}
+
+.variant {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.rating-box {
+  display: inline-block;
+  background: #1faa59;
+  padding: 4px 8px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.rating-box span {
+  font-size: 14px;
+}
+
+.ratings-count {
+  color: #444;
+  margin-right: 8px;
+}
+
+.assured-logo {
+  width: 90px;
+  vertical-align: middle;
+}
+
+.price-row {
+  margin-top: 10px;
+  font-size: 20px;
+}
+
+.price-now {
+  font-weight: bold;
+}
+
+.price-old {
+  text-decoration: line-through;
+  color: #777;
+  margin-left: 10px;
+  font-size: 18px;
+}
+
+.discount {
+  color: #1faa59;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bank-offer {
+  margin-top: 10px;
+  color: #1a8cff;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <img class="product-img"
+       src="https://rukminim2.flixcart.com/image/612/612/xif0q/smartwatch/w/x/h/-original-imahfa7xspmxemvj.jpeg"
+       alt="Samsung Watch">
+
+  <div class="title">SAMSUNG Galaxy Watch6 LTE</div>
+  <div class="variant">Graphite Strap, 44mm</div>
+
+  <div>
+    <span class="rating-box">4.3 ★</span>
+    <span class="ratings-count">(973)</span>
+
+    <img class="assured-logo"
+         src="https://static-assets-web.flixcart.com/fk-p-linchpin-web/fk-cp-zion/img/fa_62673a.png">
+  </div>
+
+  <div class="price-row">
+    <span class="price-now">₹18,999</span>
+    <span class="price-old">₹41,999</span>
+    <span class="discount">54% off</span>
+  </div>
+
+  <div class="bank-offer">Bank Offer</div>
+
+</div>
+
+</body>
+</html>
