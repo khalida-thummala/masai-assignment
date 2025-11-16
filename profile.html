@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title> Profile Card</title>
+
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#e9eef7;
+  font-family:Georgia,serif;
+  transition:.3s;
+}
+
+.toggle{
+  position:absolute;
+  top:20px;
+  right:20px;
+  width:50px;
+  height:25px;
+  border-radius:20px;
+  background:#bbb;
+  cursor:pointer;
+  display:flex;
+  align-items:center;
+  padding:2px;
+  transition:.3s;
+}
+.toggle span{
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:#fff;
+  transition:.3s;
+}
+
+.container{
+  width:300px;
+  height:400px;
+  perspective:1000px;
+}
+
+.card{
+  width:100%;
+  height:100%;
+  position:relative;
+  transform-style:preserve-3d;
+  transition:.7s;
+}
+
+
+.front{
+  width:100%;
+  height:100%;
+  position:absolute;
+  border:2px solid #000;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  background:linear-gradient(145deg,#ffffff,#dfe6f2);
+  backface-visibility:hidden;
+  box-sizing:border-box;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.profile-img{
+  width:150px;
+  height:150px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:10px;
+  transition:.3s;
+  box-shadow:0 0 12px rgba(0,0,0,0.15);
+}
+
+.name{
+  font-size:1.2rem;
+  margin:6px 0;
+}
+
+.desc{
+  font-size:0.9rem;
+  text-align:center;
+  opacity:.95;
+}
+
+.btn{
+  margin-top:15px;
+  padding:8px 16px;
+  border:none;
+  border-radius:6px;
+  background:#3a5bd8;
+  color:#fff;
+  cursor:pointer;
+  transition:.3s;
+}
+
+.btn:hover{
+  background:#2d47aa;
+}
+
+.social{
+  margin-top:12px;
+  display:flex;
+  gap:10px;
+}
+
+.social a{
+  width:30px;
+  height:30px;
+  border-radius:50%;
+  color:#fff;
+  text-decoration:none;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:14px;
+  transition:.3s;
+}
+
+.social a:nth-child(1){ background:#0077b6; }
+.social a:nth-child(2){ background:#e63946; }
+.social a:nth-child(3){ background:#333; }
+
+.back{
+  width:100%;
+  height:100%;
+  position:absolute;
+  border:2px solid #000;
+  border-radius:12px;
+  box-shadow:0 6px 18px rgba(0,0,0,0.15);
+  background:linear-gradient(160deg,#ffe8d6,#fcd5b5);
+  backface-visibility:hidden;
+  transform:rotateY(180deg);
+  box-sizing:border-box;
+  padding:20px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.meta{
+  position:absolute;
+  bottom:8px;
+  font-size:0.78rem;
+  opacity:.7;
+}
+
+.dark{
+  background:#0d0f14;
+  color:#eee;
+}
+.dark .front,.dark .back{
+  background:#222;
+  border-color:#fff;
+}
+.dark .btn{
+  background:#fff;
+  color:#000;
+}
+.dark .toggle{
+  background:#666;
+}
+.dark .toggle span{
+  transform:translateX(24px);
+}
+</style>
+</head>
+
+<body>
+
+<div class="toggle" id="toggle"><span></span></div>
+
+<div class="container">
+  <div class="card" id="profileCard">
+
+    <div class="front">
+      <img src="C:\Users\khali\OneDrive\Documents\profile.jpg" class="profile-img">
+      <h2 class="name">Khalida</h2>
+      <p class="desc">Aspiring Software Developer • Loves building web apps</p>
+
+      <button class="btn" id="viewBtn">View Profile</button>
+
+      <div class="social">
+        <a href="https://www.linkedin.com/in/khalida-thummala-a537642a3?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">L</a>
+        <a href="https://join.slack.com/shareDM/zt-3hb5k9rnp-3F8kYpCDO7RlxG4eni7BKg">S</a>
+        <a href="https://github.com/khalida-thummala">G</a>
+      </div>
+    </div>
+
+    <div class="back">
+      <h2>About Me</h2>
+      <p class="desc">I am Khalida, an engineering student and future SDE.</p>
+      <p class="desc">I enjoy clean UI + powerful backend using Java & Node.js.</p>
+      <p class="desc">I focus on learning tech & writing efficient code.</p>
+
+      <button class="btn" id="backBtn">Go Back</button>
+
+      <p class="meta"> • About Me</p>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const toggle=document.getElementById("toggle");
+toggle.onclick=()=>{
+  document.body.classList.toggle("dark");
+};
+
+const card=document.getElementById("profileCard");
+document.getElementById("viewBtn").onclick=()=>{
+  card.style.transform="rotateY(180deg)";
+};
+document.getElementById("backBtn").onclick=()=>{
+  card.style.transform="rotateY(0deg)";
+};
+</script>
+
+</body>
+</html>
